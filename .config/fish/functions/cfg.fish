@@ -1,4 +1,4 @@
-function config --wraps='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' --wraps=git
+function cfg --wraps=git
     if count $argv >/dev/null
         /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
     else
