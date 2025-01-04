@@ -1,6 +1,6 @@
 format = """
 [░▒▓](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
+$os\
 [](bg:#769ff0 fg:#a3aed2)\
 $directory\
 [](fg:#769ff0 bg:#394260)\
@@ -10,9 +10,8 @@ $git_status\
 $nodejs\
 $rust\
 $golang\
-$php\
-[](fg:#212736 bg:#1d2230)\
-$time\
+$python\
+$ruby\
 [ ](fg:#1d2230)\
 \n$character"""
 
@@ -37,6 +36,16 @@ format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
+[os.symbols]
+Fedora = " "
+FreeBSD = " "
+Macos = " "
+
+[os]
+format = '[ $symbol ]($style)'
+style = "bg:#a3aed2 fg:#090c0c"
+disabled = false
+
 [nodejs]
 symbol = ""
 style = "bg:#212736"
@@ -52,13 +61,14 @@ symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-[php]
-symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[python]
+symbol = " "
+version_format = "${raw}"
+style = "bold bright-yellow"
+format = '[[ $symbol $(version)] (fg:#769ff0 bg:#212736)]($style)'
 
-[time]
-disabled = true
-time_format = "%R"                                      # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+[ruby]
+symbol = ""
+version_format = "${raw}"
+style = "bg:#212736"
+format = '[[ $symbol $(version)] (fg:#769ff0 bg:#212736)]($style)'
