@@ -3,6 +3,4 @@ if status is-interactive
     set -gx EDITOR nvim
     set -gx VISUAL nvim
     set -g fish_greeting
-    starship init fish | source
-    enable_transience
 end
