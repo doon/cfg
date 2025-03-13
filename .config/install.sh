@@ -9,7 +9,6 @@ chsh -s /opt/homebrew/bin/fish
 #get stuff for nvim, and use nightly
 brew install wget
 brew install fd
-brew install fdfind
 brew install lazygit
 brew install ast-grep
 brew install ripgrep
